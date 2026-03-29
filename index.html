@@ -20,7 +20,7 @@
         </ul>
     </div>
     <!--AR Scene-->
-    <a-scene embedded arjs="sourceType: webcam;" gesture-detector>
+    <a-scene embedded arjs="sourceType: webcam;" gesture-detector renderer="colorManagement: true;">
 
     <a-entity
         camera
@@ -36,12 +36,13 @@
             gltf-model="url(Chest.glb)"
             scale="1.0 1.0 1.0"
             position="0 0 0"
+            material="shader: flat"
             animation__grow="property: scale; to: 3 3 3; dur: 120; startEvents: mousedown"
             animation__shrink="property: scale; to: 0.5 0.5 0.5; dur: 120; startEvents: mouseup">
         </a-entity>
 
-        <a-light type="ambient" color="#BBB"></a-light>
-        <a-light type="directional" intensity="0.8" position="-1 4 5"></a-light>
+        <a-light type="ambient" color="#FFF" intensity="1.5"></a-light>
+        <a-light type="directional" intensity="1.0" position="-1 4 5"></a-light>
     </a-marker>
 
     </a-scene>
